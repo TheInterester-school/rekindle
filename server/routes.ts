@@ -152,6 +152,15 @@ class Routes {
     const fromOid = (await Authing.getUserByUsername(from))._id;
     return await Friending.rejectRequest(fromOid, user);
   }
+
+  @Router.get("/merges/:userId")
+  async getAllMerges(session: SessionDoc, from: string) {}
+
+  @Router.post("/merges/:userId")
+  async addNewMerge(session: SessionDoc, from: string) {}
+
+  @Router.delete("/merges/:userId")
+  async expireExistingMerge(session: SessionDoc, from: string) {}
 }
 
 /** The web app. */
